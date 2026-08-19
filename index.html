@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>SILLAGE — Maison de Parfum</title>
+    <meta
+      name="description"
+      content="Scroll to travel from the lavender fields of Grasse to a single drop of Sillage Nº 1."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230D0A0E'/%3E%3Cpath d='M16 6c4 5.2 7 8.9 7 12.4A7 7 0 0 1 9 18.4C9 14.9 12 11.2 16 6z' fill='%23D4AF6A'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Theme the engine here. Dark quiet-luxury palette; photoreal scenes are full-bleed. */
+      :root,
+      .sw-root {
+        --sw-bg: #0d0a0e; /* noir — page + scrim base */
+        --sw-ink: #f2ead9; /* ivory */
+        --sw-ink-soft: #b9ae9c; /* muted ivory */
+        --sw-accent: #d4af6a; /* champagne gold (per-section accents override) */
+        --sw-font-display:
+          "Cormorant Garamond", Georgia, "Times New Roman", serif;
+        --sw-font-body: "Inter", -apple-system, "Helvetica Neue", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top"></div>
+    <div id="world"></div>
+
+    <script src="scrub-engine.js"></script>
+    <script>
+      mountLetsScroll(document.getElementById("world"), {
+        brand: { name: "SILLAGE", href: "#top" },
+        cta: { label: "Discover Nº 1", href: "#finale" },
+        hint: "scroll to begin the journey",
+        diveScroll: 1.3,
+        crossfade: 0.08, // architecture A: legs chain frame-to-frame, small dissolve only
+        connectors: [], // walkthrough: the legs ARE the journey, no connectors
+        sections: [
+          {
+            id: "harvest",
+            label: "The Harvest",
+            still: "assets/harvest.webp",
+            clip: "assets/vid/harvest.mp4",
+            accent: "#9B8CB8",
+            scroll: 1.4,
+            linger: 0.3,
+            eyebrow: "It begins in the fields",
+            title: "Grown, not manufactured.",
+            body: "Lavender, bergamot and jasmine from Grasse, cut at dawn when their oils are richest.",
+            tags: ["Grasse, France", "Dawn-cut", "Single-origin"],
+          },
+          {
+            id: "atelier",
+            label: "The Atelier",
+            still: "assets/atelier.webp",
+            clip: "assets/vid/atelier.mp4",
+            accent: "#B0703C",
+            eyebrow: "The atelier",
+            title: "Distilled drop by drop.",
+            body: "Copper stills and patient maceration draw the essence from every petal.",
+            tags: ["Small-batch", "Copper distillation", "72-hour maceration"],
+          },
+          {
+            id: "boutique",
+            label: "The Boutique",
+            still: "assets/boutique.webp",
+            clip: "assets/vid/boutique.mp4",
+            accent: "#D4AF6A",
+            eyebrow: "The boutique",
+            title: "Find your signature.",
+            body: "A quiet marble bar where the whole collection waits to be discovered, one blotter at a time.",
+            tags: ["Private consultations", "The full collection"],
+          },
+          {
+            id: "finale",
+            label: "Nº 1",
+            still: "assets/finale.webp",
+            clip: "assets/vid/finale.mp4",
+            accent: "#C9892F",
+            scroll: 1.7,
+            linger: 0.45,
+            eyebrow: "And it all becomes",
+            title: "One drop says everything.",
+            body: "Sillage Nº 1 — amber, lavender and smoked cedar. The trail you leave behind.",
+            tags: ["50ml extrait", "Hand-finished", "Numbered bottles"],
+            cta: {
+              primary: { label: "Discover Nº 1", href: "#" },
+              secondary: { label: "Book a consultation", href: "#" },
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
